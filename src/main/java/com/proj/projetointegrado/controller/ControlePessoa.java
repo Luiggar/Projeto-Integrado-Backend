@@ -1,6 +1,5 @@
 package com.proj.projetointegrado.controller;
 
-import com.proj.projetointegrado.model.Func;
 import com.proj.projetointegrado.model.Pessoa;
 import com.proj.projetointegrado.services.ServFunc;
 import com.proj.projetointegrado.services.ServPessoa;
@@ -44,7 +43,7 @@ public class ControlePessoa {
     };
 
     @PostMapping("/cliente/{id}")
-    public Func atualizarFunc(@PathVariable Long id, @RequestBody Func func){
-        return servFunc.atualizarFunc(id, func);
+    public Pessoa atualizarPessoa(@PathVariable Long id, @RequestBody Pessoa pessoa){
+        return servPessoa.atualizarPessoa(id, pessoa);
     }
 }

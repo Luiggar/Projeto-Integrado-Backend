@@ -48,11 +48,17 @@ public class ServPessoaImpl implements ServPessoa{
 
     @Override
     public Boolean deletePessoa(Long id) {
+        if(isFunc(id)){
+
+            EntiFunc entiFunc =repoFunc.findBypessoaId(id);
+            repoFunc.delete(entiFunc);
+            System.out.println(entiFunc);
+            return true;
+        }
+
         EntiPessoa entiPessoa = repoPessoa.findById(id).get();
-        EntiFunc entiFunc =repoFunc.findBypessoaId(id);
-        System.out.println(entiFunc);
         repoPessoa.delete(entiPessoa);
-        if(isFunc(id)){repoFunc.delete(entiFunc);}
+
         return true;
     }
 
