@@ -8,4 +8,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 @Transactional
 public interface RepoFunc  extends JpaRepository<EntiFunc, Long> {
+    EntiFunc findBypessoaId(Long id);
+
+    boolean existsBypessoaId(Long id);
 }

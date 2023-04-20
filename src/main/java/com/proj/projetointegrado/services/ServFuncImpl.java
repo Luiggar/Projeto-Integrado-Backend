@@ -1,6 +1,7 @@
 package com.proj.projetointegrado.services;
 
 import com.proj.projetointegrado.entity.EntiFunc;
+import com.proj.projetointegrado.entity.EntiPessoa;
 import com.proj.projetointegrado.model.Func;
 import com.proj.projetointegrado.model.FuncMapper;
 import com.proj.projetointegrado.repository.RepoEndereço;
@@ -49,14 +50,15 @@ public class ServFuncImpl implements ServFunc{
     @Override
     public Boolean deleteFunc(Long id) {
         EntiFunc entiFunc = repoFunc.findById(id).get();
+        EntiPessoa entiPessoa = entiFunc.getPessoa();
         repoFunc.delete(entiFunc);
+        repoPessoa.save(entiPessoa);
         return true;
     }
 
     @Override
     public Func atualizarFunc(Long id, Func func) {
-        EntiFunc entiFunc = repoFunc.findById(id).get();
-        entiFunc = FuncMapper.INSTANCE.ToEnti(func);
+        EntiFunc entiFunc = FuncMapper.INSTANCE.ToEnti(func);
         repoFunc.save(entiFunc);
         return func;
     }

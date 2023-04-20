@@ -10,7 +10,7 @@ public class Pessoa {
 
     private Long id;
     private String nomePessoa;
-    private Long numPessoa;
+    private String numPessoa;
     private String emailPessoa;
     private String docPessoa;
     @JsonFormat(pattern = "yyyy-MM-dd")
