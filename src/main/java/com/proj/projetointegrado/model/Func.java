@@ -12,5 +12,6 @@ public class Func {
     private String profFunc;
     private Double salFunc;
     private Pessoa pessoa;
+    private String imageblob;
 
 }

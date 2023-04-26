@@ -8,6 +8,7 @@ import com.proj.projetointegrado.repository.RepoEndereço;
 import com.proj.projetointegrado.repository.RepoFunc;
 import com.proj.projetointegrado.repository.RepoPessoa;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -32,7 +33,7 @@ public class ServPessoaImpl implements ServPessoa{
 
     @Override
     public List<Pessoa> getAllPessoas() {
-        List<EntiPessoa> listEnt = repoPessoa.findAll();
+        List<EntiPessoa> listEnt = repoPessoa.findAll(Sort.by(Sort.Direction.ASC,"nomePessoa"));
         List<Pessoa> listPessoa = PessoaMapper.INSTANCE.ListFromEnti(listEnt);
         return listPessoa;
     }
@@ -53,7 +54,6 @@ public class ServPessoaImpl implements ServPessoa{
             EntiFunc entiFunc =repoFunc.findBypessoaId(id);
             repoFunc.delete(entiFunc);
             System.out.println(entiFunc);
-            return true;
         }
 
         EntiPessoa entiPessoa = repoPessoa.findById(id).get();

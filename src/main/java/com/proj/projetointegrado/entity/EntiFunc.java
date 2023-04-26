@@ -14,9 +14,11 @@ public class EntiFunc {
     private long id;
     private String profFunc;
     private Double salFunc;
-    @OneToOne(cascade =CascadeType.ALL)
+    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REFRESH})
     @JoinColumn(name = "id_pessoa")
     private EntiPessoa pessoa;
+    @Column(length = Integer.MAX_VALUE, nullable = true)
+    private String imageblob;
 
 
 
