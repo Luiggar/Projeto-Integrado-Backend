@@ -46,4 +46,8 @@ public class ControlePessoa {
     public Pessoa atualizarPessoa(@PathVariable Long id, @RequestBody Pessoa pessoa){
         return servPessoa.atualizarPessoa(id, pessoa);
     }
+    @PutMapping("/cliente/{id}")
+    public Boolean isFunc(@PathVariable Long id) {
+        return  servPessoa.isFunc(id);
+    }
 }
