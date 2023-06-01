@@ -11,7 +11,8 @@ public interface FuncMapper {
     FuncMapper INSTANCE = Mappers.getMapper(FuncMapper.class);
 
     EntiFunc ToEnti(Func func);
-    List<Func> ListFromEnti(List<EntiFunc> funcList);
+    List<Func> ListFromEnti(List<EntiFunc> forList);
+
 
     Func toFunc(EntiFunc entiFunc);
 

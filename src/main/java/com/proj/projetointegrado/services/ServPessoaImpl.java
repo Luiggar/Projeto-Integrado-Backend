@@ -4,7 +4,7 @@ import com.proj.projetointegrado.entity.EntiFunc;
 import com.proj.projetointegrado.entity.EntiPessoa;
 import com.proj.projetointegrado.model.Pessoa;
 import com.proj.projetointegrado.model.PessoaMapper;
-import com.proj.projetointegrado.repository.RepoEndereço;
+import com.proj.projetointegrado.repository.RepoEndereco;
 import com.proj.projetointegrado.repository.RepoFunc;
 import com.proj.projetointegrado.repository.RepoPessoa;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +21,7 @@ public class ServPessoaImpl implements ServPessoa{
     @Autowired
     RepoPessoa repoPessoa;
     @Autowired
-    RepoEndereço repoEndereço;
+    RepoEndereco repoEndereco;
 
 
     @Override

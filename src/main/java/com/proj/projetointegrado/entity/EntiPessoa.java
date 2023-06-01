@@ -21,7 +21,7 @@ import java.util.Date;
 public class EntiPessoa {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
     private String nomePessoa;
     private String numPessoa;
     private String emailPessoa;
@@ -30,7 +30,7 @@ public class EntiPessoa {
     private Date birthPessoa;
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "idendereco")
-    private EntiEndereço endereço;
+    private EntiEndereco endereco;
 
 
 }

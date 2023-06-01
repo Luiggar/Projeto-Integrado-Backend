@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:3000/")
 @RestController
 @RequestMapping("/api/v1/")
 public class ControlePessoa {
@@ -50,4 +50,7 @@ public class ControlePessoa {
     public Boolean isFunc(@PathVariable Long id) {
         return  servPessoa.isFunc(id);
     }
+
+    @GetMapping("/cliente/find/{id}")
+    public Long findFunc(@PathVariable Long id) { return servPessoa.findFuncId(id);}
 }

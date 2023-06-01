@@ -2,13 +2,17 @@ package com.proj.projetointegrado.entity;
 
 import jakarta.persistence.*;
 import jakarta.transaction.Transactional;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
 @Transactional
 @Table(name = "endereco")
-public class EntiEndereço {
+@AllArgsConstructor
+@NoArgsConstructor
+public class EntiEndereco {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long idendereco;

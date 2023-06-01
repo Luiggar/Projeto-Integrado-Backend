@@ -3,7 +3,7 @@ package com.proj.projetointegrado.services;
 import com.proj.projetointegrado.entity.EntiFunc;
 import com.proj.projetointegrado.model.Func;
 import com.proj.projetointegrado.model.FuncMapper;
-import com.proj.projetointegrado.repository.RepoEndereço;
+import com.proj.projetointegrado.repository.RepoEndereco;
 import com.proj.projetointegrado.repository.RepoFunc;
 import com.proj.projetointegrado.repository.RepoPessoa;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +21,7 @@ public class ServFuncImpl implements ServFunc{
     @Autowired
     RepoPessoa repoPessoa;
     @Autowired
-    RepoEndereço repoEndereço;
+    RepoEndereco repoEndereco;
 
 
     @PostMapping("/func")

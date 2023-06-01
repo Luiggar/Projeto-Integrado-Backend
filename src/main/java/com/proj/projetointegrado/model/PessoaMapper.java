@@ -6,7 +6,7 @@ import org.mapstruct.factory.Mappers;
 
 import java.util.List;
 
-@Mapper(uses = {EndereçoMapper.class})
+@Mapper(uses = {EnderecoMapper.class})
 public interface PessoaMapper {
     PessoaMapper INSTANCE = Mappers.getMapper(PessoaMapper.class);
     EntiPessoa toEnntity(Pessoa pessoa);
